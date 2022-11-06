@@ -1,0 +1,82 @@
+
+GET http://localhost:3000/api/inmueble
+
+###
+
+POST http://localhost:3000/api/inmueble
+Content-Type: application/json
+
+{
+    "piso": "PB",
+    "letra": "A",
+    "extension": "150",
+    "habitaciones": "1 recepcion, 2 mostradores",
+    "alquilado": "false",
+    "nombrePropietario": "urhosaej",
+    "mailContacto": "efiej"
+}
+
+###
+// Prueba de error
+POST http://localhost:3000/api/inmueble
+Content-Type: application/json
+
+{
+    "piso": "PB",
+    "extension": "150",
+    "habitaciones": "1 recepcion, 2 mostradores",
+    "alquilado": "false",
+    "nombrePropietario": "urhosaej",
+    "mailContacto": "efiej"
+}
+###
+
+
+Put http://localhost:3000/api/inmueble/635ea0f773d9b2b5c50e5f1a
+
+Content-Type: application/json
+
+{
+    "piso": "1",
+    "letra": "B",
+    "extension": "15",
+    "habitaciones": "3 mostradores",
+    "alquilado": "true",
+    "nombrePropietario": "aaaa",
+    "mailContacto": "aaaa"
+}
+
+###
+// prueba error
+
+Put http://localhost:3000/api/inmueble/635ea0f773d9b2b5c50e5f1a
+
+Content-Type: application/json
+
+{
+    "piso": "1",
+    "letra": "B",
+    "habitaciones": "3 mostradores",
+    "alquilado": "true",
+    "nombrePropietario": "aaaa",
+    "mailContacto": "aaaa"
+}
+###
+
+DELETE http://localhost:3000/api/inmueble/635ea05541f3c1686c2c793a
+Content-Type: application/json
+
+{
+    "piso": "PB",
+    "letra": "A",
+    "extension": "150",
+    "habitaciones": "1 recepcion, 2 mostradores",
+    "alquilado": "false",
+    "nombrePropietario": "urhosaej",
+    "mailContacto": "efiej"
+}
+
+
+
+
+
