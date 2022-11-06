@@ -41,27 +41,16 @@ router.post("/", async (req, res) => {
 /* PUT */
 router.put("/:inmuebleId", async (req, res) => {
   const elementos = { ...req.body };
-  if (
-    elementos.piso === undefined ||
-    elementos.letra === undefined ||
-    elementos.extension === undefined ||
-    elementos.habitaciones === undefined ||
-    elementos.alquilado === undefined ||
-    elementos.nombrePropietario === undefined ||
-    elementos.mailContacto === undefined
-  ) {
-    res.json({ error: "No se mandaron los suficientes parametros" });
-  } else {
-    try {
-      const result = await Inmueble.findByIdAndUpdate(
-        req.params.inmuebleId,
-        req.body,
-        { new: true }
-      );
-      res.json(result);
-    } catch (err) {
-      res.json({ error: err.message });
-    }
+
+  try {
+    const result = await Inmueble.findByIdAndUpdate(
+      req.params.inmuebleId,
+      req.body,
+      { new: true }
+    );
+    res.json(result);
+  } catch (err) {
+    res.json({ error: err.message });
   }
 });
 

@@ -45,22 +45,6 @@ Content-Type: application/json
     "mailContacto": "efiej"
 }
 
-
-###
-// prueba error
-
-Put http://localhost:3000/api/inmueble/635ea0f773d9b2b5c50e5f1a
-
-Content-Type: application/json
-
-{
-    "piso": "1",
-    "letra": "B",
-    "habitaciones": "3 mostradores",
-    "alquilado": "true",
-    "nombrePropietario": "aaaa",
-    "mailContacto": "aaaa"
-}
 ###
 
 DELETE http://localhost:3000/api/inmueble/635ea05541f3c1686c2c793a
