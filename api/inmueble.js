@@ -28,12 +28,13 @@ router.post("/", async (req, res) => {
     elementos.mailContacto === undefined
   ) {
     res.json({ error: "No se mandaron los suficientes parametros" });
-  }
-  try {
-    const result = await Inmueble.create(req.body);
-    res.json(result);
-  } catch (err) {
-    res.json({ error: err.message });
+  } else {
+    try {
+      const result = await Inmueble.create(req.body);
+      res.json(result);
+    } catch (err) {
+      res.json({ error: err.message });
+    }
   }
 });
 
@@ -50,17 +51,17 @@ router.put("/:inmuebleId", async (req, res) => {
     elementos.mailContacto === undefined
   ) {
     res.json({ error: "No se mandaron los suficientes parametros" });
-  }
-
-  try {
-    const result = await Inmueble.findByIdAndUpdate(
-      req.params.inmuebleId,
-      req.body,
-      { new: true }
-    );
-    res.json(result);
-  } catch (err) {
-    res.json({ error: err.message });
+  } else {
+    try {
+      const result = await Inmueble.findByIdAndUpdate(
+        req.params.inmuebleId,
+        req.body,
+        { new: true }
+      );
+      res.json(result);
+    } catch (err) {
+      res.json({ error: err.message });
+    }
   }
 });
 
